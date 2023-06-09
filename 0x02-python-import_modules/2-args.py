@@ -2,12 +2,12 @@
 
 import sys
 
-args_count = len(sys.argv) - 1
-if args_count == 0:
+argument = len(sys.argv) - 1
+if argument == 1:
     print("0 arguments.")
-elif args_count == 1:
+elif argument == 1:
     print("1 argument:")
 else:
-    print("{} arguments:".format(args_count))
-for i in range(args_count):
+    print("{} arguments:".format(argument))
+for i in range(argument):
     print("{}: {}".format(i + 1, sys.argv[i + 1]))

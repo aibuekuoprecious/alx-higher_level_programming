@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Node module """
 
 class Node:
     """ Declares the Node class """

@@ -1,0 +1,130 @@
+"""
+Interactive test for the 100-matrix_mul module
+"""
+
+# Import the module
+matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+# Check module docstring
+Mdocs = matrix_mul.__doc__
+assert len(Mdocs) > 5
+
+# Check function docstring
+Fdocs = matrix_mul.__doc__
+assert len(Fdocs) > 5
+
+# Test cases for wrong argument types
+try:
+    matrix_mul([[2, 3, 4], [4, 2, 3]], None)
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul("school", [[2, 3, 4], [4, 2, 3]])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul([[1, 2], "you"], [[1, 2, 3], [2, 3, 4]])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul([[1, 2], [2, 3], [3, 4]], [1, 3, 4])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul([[1, 2], [2, 3]], [[1, 3], (4, 4)])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul([{1, 2}, [2, 3]], [[1, 3], [4, 5]])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul([[1.3, 2, 4], [2.5, 3]], [[1, 2], [4, 5]])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+try:
+    matrix_mul([[1, 2.0, 3], [4.9, 1, 4]], [[1, 2, 3], [4, 2]])
+except TypeError:
+    pass
+else:
+    raise AssertionError("TypeError not raised for wrong argument type")
+
+# Test cases for wrong argument values
+try:
+    matrix_mul([[]], [[2, 4]])
+except ValueError:
+    pass
+else:
+    raise AssertionError("ValueError not raised for wrong argument value")
+
+try:
+    matrix_mul([], [[2, 4, 4.8]])
+except ValueError:
+    pass
+else:
+    raise AssertionError("ValueError not raised for wrong argument value")
+
+try:
+    matrix_mul([[1, 4.2], [1, 4.0]], [])
+except ValueError:
+    pass
+else:
+    raise AssertionError("ValueError not raised for wrong argument value")
+
+try:
+    matrix_mul([[1.5, 4.2], [1, 4.0]], [[]])
+except ValueError:
+    pass
+else:
+    raise AssertionError("ValueError not raised for wrong argument value")
+
+try:
+    matrix_mul([[1, 4.2], [1, 4.0]], [[3, 5], []])
+except ValueError:
+    pass
+else:
+    raise AssertionError("ValueError not raised for wrong argument value")
+
+try:
+    matrix_mul([[1, 4.2, 3], [1, 4.0, 4]], [[1, 4], [3, 5]])
+except ValueError:
+    pass
+else:
+    raise AssertionError("ValueError not raised for wrong argument value")
+
+# Test cases for normal functionality
+result = matrix_mul([[1, 3], [2, 4]], [[0, 1], [1, 2]])
+assert result == [[3, 7], [4, 10]]
+
+result = matrix_mul([[1.24, 4.2], [4, 3.2]], [[3, 5], [1.5, 4.9]])
+assert result == [[10.02, 26.78], [16.8, 35.68]]
+
+result = matrix_mul([[1, -2.5, -5], [1, 0, -2]], [[1, 4], [5, 9], [-1.4, -2]])
+assert result == [[-4.5, -8.5], [3.8, 8]]
+
+result = matrix_mul([[1, 2], [3, 4]], [[1.5, 2.5, 3.5], [4.5, 6.5, 7.5]])
+assert result == [[10.5, 15.5, 18.5], [22.5, 33.5, 40.5]]
+
+print("All tests passed successfully.")
+

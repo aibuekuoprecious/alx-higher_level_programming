@@ -14,7 +14,7 @@ class Base:
         """
         Defining the class constructor
         """
-        if id != None:
+        if cond is not None:
             self.id = id
         else:
             Base.__nb_objects += 1

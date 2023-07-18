@@ -6,7 +6,8 @@ import json
 
 
 class Base:
-    """ base class
+    """ 
+    Base class
     Attributes:
         _nb_objects: number of objects created
         id: id of object
@@ -14,7 +15,8 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """initiation method
+        """
+        Initiation method
         args:
             id: id of object
         """
@@ -25,14 +27,18 @@ class Base:
             self.id = Base.__nb_objects
 
     def integer_validator(self, name, value):
-        """check if value is an integer"""
+        """
+        Check if a value is an integer
+        """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be > 0'.format(name))
 
     def integer_validator2(self, name, value):
-        """check if value is an integer"""
+        """
+        Check if value is an integer
+        """
         if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value < 0:
@@ -40,7 +46,8 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """returns JSON string
+        """
+        Returns JSON string
         args:
             list_dictionaries: list of dictionaries
         return:
@@ -50,7 +57,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """json to string static method
+        """
+        Json to string static method
         args:
             json_string: json object string type
         return:
@@ -62,7 +70,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes JSON string to a file
+        """
+        Writes JSON string to a file
         args:
             list_objs: list of objects
         return:
@@ -77,7 +86,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """return instance with all attributes set
+        """
+        Return instance with all attributes set
         args:
             dictionary: double pointer
         return:
@@ -92,7 +102,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''Returns a list of instances
+        '''
+        Returns a list of instances
         return:
             list of instance json string
         '''

@@ -4,6 +4,6 @@ if (process.argv.length <= 2) {
 } else {
   const args = process.argv.slice(2).map(Number);
   const sortedArgs = args.sort();
-  const secondLargest = sortedArgs[1]
-  console.log(secondLargest)
+  const secondLargest = sortedArgs[1];
+  console.log(secondLargest);
 }

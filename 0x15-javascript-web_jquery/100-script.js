@@ -1,3 +1,4 @@
-window.onload = function () {
-  document.querySelector("header").style.color = "#FF0000";
-};
+const headerEl = document.querySelector('header');
+    if (headerEl) {
+      headerEl.style.color = '#FF0000';
+    }

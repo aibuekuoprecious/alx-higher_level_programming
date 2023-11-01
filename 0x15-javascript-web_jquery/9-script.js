@@ -3,11 +3,3 @@ window.onload = function () {
     $('div#hello').text(data.hello);
   });
 };
-
-//OR
-//$(function () {
-//  const apiUrl = "https://stefanbohacek.com/hellosalut/?lang=fr";
-//  $.get(apiUrl, function (data) {
-//    $("DIV#hello").text(data.hello);
-//  });
-//});

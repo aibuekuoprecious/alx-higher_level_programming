@@ -1,3 +1,4 @@
+/**fetches and lists the title for all movies by using this URL: https://swapi-api.alx-tools.com/api/films/?format=json*/
 const nameUrl = "https://swapi-api.hbtn.io/api/films/?format=json";
 $.get(nameUrl, function (data) {
   const titles = data.results;
